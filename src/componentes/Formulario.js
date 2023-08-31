@@ -6,9 +6,11 @@ export default class Formulario extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      documento: "123",
-      apellidos: "",
-      nombres: ""
+
+      codigo: "123",
+      nombre: "",
+      docente: "",
+      ,nota: ""
     };
   }
 
@@ -23,27 +25,29 @@ export default class Formulario extends React.Component {
     return (
       <div className="Formulario">
         Formulario
+      
         <Input
-          titulo="Documento"
-          valor={documento}
-          onChange={(valor) => this.setState({ documento: valor })}
-        />
-        <Input
-          titulo="Apellidos"
-          valor={apellidos}
-          onChange={(valor) => this.setState({ apellidos: valor })}
+          titulo="Codigo"
+          valor={codigo}
+          onChange={(valor) => this.setState({ : valor })}
         />
         <Input
           titulo="Nombres"
           valor={nombres}
           onChange={(valor) => this.setState({ nombres: valor })}
         />
+         <Input
+          titulo="Docente"
+          valor={docente}
+          onChange={(valor) => this.setState({ docente: valor })}
+        />
         <Input
-          titulo="Nombres"
-          valor={nombres}
-          onChange={(valor) => this.setState({ nombres: valor })}
+          titulo="Horas"
+          valor={Horsa}
+          onChange={(valor) => this.setState({ Horsa: valor })}
         />
         <Boton titulo="Guardar" onClick={() => this.guardar()} />
+        <Boton titulo="EliminarTodo" onClick={() => this.eliminarTodo()} />
       </div>
     );
   }
