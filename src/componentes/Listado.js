@@ -6,6 +6,6 @@ export default class Listado extends React.Component {
   }
   render() {
     const { titulo, onClick } = this.props;
-    return <div> a</div>;
+    return <div> </div>;
   }
 }

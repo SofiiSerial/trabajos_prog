@@ -10,18 +10,19 @@ export default class Formulario extends React.Component {
       codigo: "123",
       nombre: "",
       docente: "",
-      ,nota: ""
+      hsCatedras:"",
+      notas: ""
     };
   }
 
   guardar() {
-    const { documento, apellidos, nombres } = this.state;
-    const msj = `la persona guardada es: ${documento} - ${apellidos}, ${nombres} `;
+    const {codigo, nombre, docente, hsCatedras, notas} = this.state;
+    const msj = `la persona guardada es: ${codigo} - ${nombre}, ${docente} ,${hsCatedras} ,${notas} `;
     alert(msj);
   }
 
   render() {
-    const { documento, apellidos, nombres } = this.state;
+    const { codigo, nombre, docente, hsCatedras, notas} = this.state;
     return (
       <div className="Formulario">
         Formulario
@@ -29,12 +30,12 @@ export default class Formulario extends React.Component {
         <Input
           titulo="Codigo"
           valor={codigo}
-          onChange={(valor) => this.setState({ : valor })}
+          onChange={(valor) => this.setState({ codigo: valor })}
         />
         <Input
           titulo="Nombres"
-          valor={nombres}
-          onChange={(valor) => this.setState({ nombres: valor })}
+          valor={nombre}
+          onChange={(valor) => this.setState({ nombre: valor })}
         />
          <Input
           titulo="Docente"
@@ -42,12 +43,19 @@ export default class Formulario extends React.Component {
           onChange={(valor) => this.setState({ docente: valor })}
         />
         <Input
-          titulo="Horas"
-          valor={Horsa}
-          onChange={(valor) => this.setState({ Horsa: valor })}
+          titulo="hsCatedras"
+          valor={hsCatedras}
+          onChange={(valor) => this.setState({ hsCatedras: valor })}
         />
-        <Boton titulo="Guardar" onClick={() => this.guardar()} />
-        <Boton titulo="EliminarTodo" onClick={() => this.eliminarTodo()} />
+          <Input
+          titulo="Notas"
+          valor={notas}
+          onChange={(valor) => this.setState({ notas: valor })}
+        />
+        <div style={{display:"flex",flexDirection:"row"}}>
+          <Boton titulo="Eliminar" onClick={() => this.eliminarTodo()} />
+          <Boton titulo="Guardar" onClick={() => this.guardar()} />
+        </div>
       </div>
     );
   }

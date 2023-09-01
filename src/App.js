@@ -14,16 +14,15 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        Formulario
-        <div>
+     <div className="App">
+     <div>
           <Header />
-        </div>
-        <Formulario />
-        <Listado />
-        <div>
+     </div>
+          <Formulario />
+          <Listado />
+     <div>
           <Footer />
-        </div>
+      </div>
       </div>
     );
   }

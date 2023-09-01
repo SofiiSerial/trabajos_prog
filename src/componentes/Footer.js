@@ -8,9 +8,9 @@ export default class Footer extends React.Component {
   render() {
     const { titulo, onClick } = this.props;
     return (
-      <span className="Boton" onClick={() => onClick()}>
-        {titulo}
-      </span>
+      <div>
+          
+      </div>
     );
   }
 }
