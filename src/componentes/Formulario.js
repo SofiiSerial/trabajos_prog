@@ -20,6 +20,9 @@ export default class Formulario extends React.Component {
     const msj = `la persona guardada es: ${codigo} - ${nombre}, ${docente} ,${hsCatedras} ,${notas} `;
     alert(msj);
   }
+  eliminarTodo() {
+    
+  }
 
   render() {
     const { codigo, nombre, docente, hsCatedras, notas} = this.state;
@@ -32,7 +35,7 @@ export default class Formulario extends React.Component {
           valor={codigo}
           onChange={(valor) => this.setState({ codigo: valor })}
         />
-        <Input
+        <Input require
           titulo="Nombres"
           valor={nombre}
           onChange={(valor) => this.setState({ nombre: valor })}
@@ -52,9 +55,10 @@ export default class Formulario extends React.Component {
           valor={notas}
           onChange={(valor) => this.setState({ notas: valor })}
         />
-        <div style={{display:"flex",flexDirection:"row"}}>
-          <Boton titulo="Eliminar" onClick={() => this.eliminarTodo()} />
+        <div className="botonContainer" style={{display:"flex",flexDirection:"row"}}>
+          <Boton titulo="Eliminar" onClick={() => this.eliminar()} />
           <Boton titulo="Guardar" onClick={() => this.guardar()} />
+           <Boton titulo="+" onClick={() => this.mas()} />
         </div>
       </div>
     );

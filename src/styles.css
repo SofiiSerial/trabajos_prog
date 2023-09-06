@@ -39,3 +39,7 @@ input {
   cursor: pointer;
   border-radius: 5px;
 }
+
+.botonContainer {
+  gap: 10px;
+}
