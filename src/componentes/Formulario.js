@@ -1,3 +1,4 @@
+
 import React from "react";
 import Input from "./Input";
 import Boton from "./Boton";
@@ -19,9 +20,6 @@ export default class Formulario extends React.Component {
     const {codigo, nombre, docente, hsCatedras, notas} = this.state;
     const msj = `la persona guardada es: ${codigo} - ${nombre}, ${docente} ,${hsCatedras} ,${notas} `;
     alert(msj);
-  }
-  eliminarTodo() {
-    
   }
 
   render() {

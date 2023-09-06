@@ -8,9 +8,8 @@ export default class Accion extends React.Component {
   render() {
     const { titulo, onClick } = this.props;
     return (
-      <span className="Boton" onClick={() => onClick()}>
-        {titulo}
-      </span>
+      <span onClick={()=> onClick()} className="EliminarMateria equis"> {titulo} </span>
     );
   }
+
 }

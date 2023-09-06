@@ -43,3 +43,28 @@ input {
 .botonContainer {
   gap: 10px;
 }
+
+.materias {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.materia {
+	width: 62vw;
+	display: flex;
+	flex-direction: row;
+	margin: 5px;
+	background-color: #C87D6D;
+	position: relative;
+	user-select: none;
+
+}
+
+.dato {
+	font-size: 17px;
+	font-weight: 500;
+	color: white;
+}
