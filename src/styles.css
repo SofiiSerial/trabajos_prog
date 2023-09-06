@@ -18,24 +18,28 @@ body {
 .Formulario {
   display: flex;
   flex-direction: column;
-  margin: 15px;
-  background-color: rgb(32, 43, 143);
+  margin: 7px;
+  background-color: #2e436e;
   padding: 5px;
   border-randius: 10px;
   align-items: center;
+  border-radius: 5%;
+  font-family: 𝐟𝐚𝐧𝐜𝐲 𝐭𝐞𝐱𝐭;
 }
 
 .Formulario label,
 input {
-  width: calc(100% - 5px);
+  font-family: 𝘧𝘢𝘯𝘤𝘺 ;
+  width: calc(90% - 5px);
   text-align: left;
-  margin: 3px 0;
+  margin: 4px 0;
 }
+
 
 .Boton {
   margin: 15px 0;
   padding: 5px 8px;
-  background-color: rgb(102, 110, 226);
+  background-color: #919cce;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -57,7 +61,7 @@ input {
 	display: flex;
 	flex-direction: row;
 	margin: 5px;
-	background-color: #C87D6D;
+	background-color: #919cce;
 	position: relative;
 	user-select: none;
 
