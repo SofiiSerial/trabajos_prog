@@ -55,7 +55,7 @@ export default class Formulario extends React.Component {
         />
         <div className="botonContainer" style={{display:"flex",flexDirection:"row"}}>
           <Boton titulo="Eliminar" onClick={() => this.eliminar()} />
-          <Boton titulo="Guardar" onClick={() => this.guardar()} />
+          <Boton titulo="Guardar" onClick={() => this.props.guardarDatos()} />
            <Boton titulo="+" onClick={() => this.mas()} />
         </div>
       </div>

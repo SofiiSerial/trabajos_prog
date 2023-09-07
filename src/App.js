@@ -12,13 +12,38 @@ export default class App extends React.Component {
     this.state = {};
   }
 
+  obtenerMateria(){
+    const url='https://hd6v8q-3000.csb.app/api/materias/'
+  
+    axios.get(url)
+    .then((resp)=>{
+    //escribir(//resp.data.materias);
+      //resp.data.materias
+    })
+    .catch((error)=>{
+  
+    })
+  }
+
+  guardar(datos){
+    const url='https://hd6v8q-3000.csb.app/api/materias/'
+    
+    axios.post(url, datos)
+    .then((resp)=>{
+      obtenerMateria()
+    })
+    .catch((error)=>{
+      alert("ocurrio un error")
+      console.log(error)
+    })
+  }
   render() {
     return (
      <div className="App">
      <div>
           <Header />
      </div>
-          <Formulario />
+          <Formulario guardarDatos ={() => this.guardar()}/>
           <Listado />
      <div>
           <Footer />
