@@ -18,8 +18,9 @@ export default class Formulario extends React.Component {
 
   guardar() {
     const {codigo, nombre, docente, hsCatedras, notas} = this.state;
-    const msj = `la persona guardada es: ${codigo} - ${nombre}, ${docente} ,${hsCatedras} ,${notas} `;
-    alert(msj);
+    //const msj = `la persona guardada es: ${codigo} - ${nombre}, ${docente} ,${hsCatedras} ,${notas} `;
+    const datos ={codigo, nombre, docente, hsCatedras, notas}
+    this.props.guardarDatos(datos)
   }
 
   render() {

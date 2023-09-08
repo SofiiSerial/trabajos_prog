@@ -9,7 +9,13 @@ import "./styles.css";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      materias:[]
+    };
+  }
+
+  componentDidMount(){
+    this.obtenerMateria()
   }
 
   obtenerMateria(){
@@ -17,11 +23,14 @@ export default class App extends React.Component {
   
     axios.get(url)
     .then((resp)=>{
+      console.log(resp.data)
+      this.setState({materias:resp.data.materias})
     //escribir(//resp.data.materias);
       //resp.data.materias
     })
     .catch((error)=>{
-  
+  console.log(error)
+  alert("error")
     })
   }
 
@@ -30,7 +39,9 @@ export default class App extends React.Component {
     
     axios.post(url, datos)
     .then((resp)=>{
-      obtenerMateria()
+      cosole.log (resp.data)
+      alert("guardado")
+      this.obtenerMateria()
     })
     .catch((error)=>{
       alert("ocurrio un error")
@@ -43,8 +54,10 @@ export default class App extends React.Component {
      <div>
           <Header />
      </div>
-          <Formulario guardarDatos ={() => this.guardar()}/>
-          <Listado />
+          <Formulario guardarDatos ={(materia) => this.guardar(materia)}/>
+          <Listado 
+            materias={this.state.materias}
+          />
      <div>
           <Footer />
       </div>
