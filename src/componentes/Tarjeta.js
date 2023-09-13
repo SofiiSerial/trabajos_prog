@@ -6,17 +6,25 @@ export default class Boton extends React.Component {
     this.state = {};
   }
   render() {
-    const { materia , eliminar } = this.props;
+    const { eliminar } = this.props;
+    const { nombre, docente, hsCatedras, codigo } = this.props.datos;
     return (
       <div className="materia">
-			<span>ID: <span className="dato">123133</span> </span>
-			<span>Materia: <span className="dato">ingles</span>  </span>
-			<span>Docente: <span className="dato">luci</span>  </span>
-			<span>Horas Semanales: <span className="dato">2hs</span>  </span>
+        <span>
+          ID: <span className="dato">{codigo}</span>
+        </span>
+        <span>
+          Materia: <span className="dato">{nombre}</span>
+        </span>
+        <span>
+          Docente: <span className="dato">{docente}</span>
+        </span>
+        <span>
+          Horas Semanales: <span className="dato">{hsCatedras}</span>
+        </span>
 
-			<Accion  titulo=" &times;" onClick = {() => eliminar()}/>
-			
-    	</div>
+        <Accion titulo=" &times;" onClick={() => eliminar()} />
+      </div>
     );
   }
 }

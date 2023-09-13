@@ -6,10 +6,19 @@ export default class Listado extends React.Component {
     this.state = {};
   }
   render() {
-    const { titulo, onClick } = this.props;
-    return <div className = "materias"> 
-    <Tarjeta eliminar={()=>alert("eliminar materia")}/>
-    </div>;
+    const { materias } = this.props;
+    return (
+      <div className="materias">
+        {materias.map((materia, index) => {
+          return (
+            <Tarjeta
+              key={index}
+              datos={materia}
+              eliminar={() => alert("eliminar materia")}
+            />
+          );
+        })}
+      </div>
+    );
   }
-
 }
