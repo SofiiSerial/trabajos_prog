@@ -10,19 +10,15 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      materias: [
-        { nombre: "ingles", codigo: "111", docente: "juan", hsCatedras: "3" },
-        { nombre: "ingles", codigo: "177", docente: "juan", hsCatedras: "3" },
-        { nombre: "ingles", codigo: "111", docente: "juan", hsCatedras: "3" },
-      ],
+      materias: [],
     };
   }
 
   componentDidMount() {
-    //this.obtenerMateria()
+    this.obtenerMaterias();
   }
 
-  obtenerMateria() {
+  obtenerMaterias() {
     const url = "https://hd6v8q-3000.csb.app/api/materias/";
 
     axios
@@ -39,15 +35,15 @@ export default class App extends React.Component {
       });
   }
 
-  guardar(datos) {
+  guardarDatos(datos) {
     const url = "https://hd6v8q-3000.csb.app/api/materias/";
 
     axios
       .post(url, datos)
       .then((resp) => {
-        cosole.log(resp.data);
+        console.log(resp.data);
         alert("guardado");
-        this.obtenerMateria();
+        this.obtenerMaterias();
       })
       .catch((error) => {
         alert("ocurrio un error");
@@ -60,7 +56,7 @@ export default class App extends React.Component {
         <div>
           <Header />
         </div>
-        <Formulario guardarDatos={(materia) => this.guardar(materia)} />
+        <Formulario guardarDatos={(materia) => this.guardarDatos(materia)} />
         <Listado materias={this.state.materias} />
         <div>
           <Footer />
